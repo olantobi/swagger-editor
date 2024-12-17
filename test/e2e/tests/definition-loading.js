@@ -11,7 +11,7 @@ describe("Menu Definition Loading", () => {
                 cy.wait(50).contains("Load Petstore OAS 2.0").click()
 
                 cy.get(".info", { timeout: 10000 }).should("be.visible")
-                cy.get(".info .title").should("have.text", "Swagger Petstore 2.0 1.0.0 ")
+                cy.get(".info .title").should("have.text", "Swagger Petstore 2.0 1.0.0 OAS 2.0")
             })
         })
 
@@ -22,7 +22,7 @@ describe("Menu Definition Loading", () => {
                 cy.wait(50).contains("Load Petstore OAS 3.0").click()
 
                 cy.get(".info", { timeout: 10000 }).should("be.visible")
-                cy.get(".info .title .version-stamp .version").should("have.text", "OAS3")
+                cy.get(".info .title .version-stamp .version").should("have.text", "OAS 3.0")
             })
         })
     })
