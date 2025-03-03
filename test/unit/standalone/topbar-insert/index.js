@@ -3,7 +3,7 @@ import SwaggerUI from 'swagger-ui';
 import insertPlugin from 'src/standalone/topbar-insert';
 import { fromJS } from 'immutable';
 import { configure, mount } from 'enzyme';
-import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
+import Adapter from '@cfaester/enzyme-adapter-react-18';
 
 configure({ adapter: new Adapter() });
 
@@ -13,11 +13,11 @@ function getSystem(spec) {
       spec,
       domNode: null,
       presets: [
-        SwaggerUI.plugins.SpecIndex,
-        SwaggerUI.plugins.ErrIndex,
+        SwaggerUI.plugins.Spec,
+        SwaggerUI.plugins.Err,
         SwaggerUI.plugins.DownloadUrl,
-        SwaggerUI.plugins.SwaggerJsIndex,
-        SwaggerUI.plugins.RequestSnippetsIndex,
+        SwaggerUI.plugins.SwaggerClient,
+        SwaggerUI.plugins.RequestSnippets,
       ],
       initialState: {
         layout: undefined
